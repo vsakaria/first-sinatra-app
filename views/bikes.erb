@@ -1,0 +1,9 @@
+<% @title = "Bike Page" %>
+<h1>This is where all our Bike related stuff will go</h1>
+<h2>This is all the bikes</h2>
+<ul>
+<% bikes.each do |bike| %>
+	<li><%= h bike.inspect %></li>
+<% end %>
+</ul>
+<%= bikes.count %>

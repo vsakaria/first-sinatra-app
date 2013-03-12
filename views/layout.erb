@@ -1,0 +1,23 @@
+
+<!doctype html>
+<html>
+<head>
+	<title><%= @title ||= "Boris Bikes - by Vish and Mark" %></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="/" title="Home">Home</a></li>
+				<li><a href="/bikes" title="Bikes">Bikes</a></li>				
+			</ul>
+		</nav>
+		<h1><%= @title %></h1>
+	</header>
+	<section>
+		<%= yield %>
+	</section>
+</body>
+</html>
