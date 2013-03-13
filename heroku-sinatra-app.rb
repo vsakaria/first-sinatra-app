@@ -36,6 +36,22 @@ get '/bikes' do
   erb :bikes, locals: { foundbikes: bikes }
 end
 
+get '/bikes/new' do
+  @bike = Bike.new
+  erb :new_bike
+end
+
+post '/bikes' do
+  # {:id => 1, :broken => true}
+  bike = Bike.create(params[:bike])
+  redirect to("/bikes/#{bike.id}")
+end
+
+get '/bikes/:id' do
+  @bike = Bike.get(params[:id])
+  erb :show_bike
+end
+
 # Test at <appname>.heroku.com (you'll need to create your app first!)
 
 helpers do

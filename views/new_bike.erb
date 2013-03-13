@@ -1,0 +1,7 @@
+<h1>Add a Bike</h1>
+<form method="POST" action="/bikes">
+	<label for="broken">Is it Broken?:</label>
+	<input type="string" name="bike[broken]" value="<%= "" unless @bike.broken %>"/>
+	<input type="submit" value="Just Add It!"/>	
+</form>
+

@@ -2,12 +2,10 @@
 	<h1><%= foundbikes.count %></h1>
 <h2>This is  the bike in the Db </h2>
 
+<a href="/bikes/new">Create a new bike</a>
+
 <ul>
 	<% foundbikes.each do |bike| %>
 		<li><%= escape_html bike.to_s %></li>
 	<% end %>
 </ul>
-
-
-
-

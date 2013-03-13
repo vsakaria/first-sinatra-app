@@ -2,11 +2,7 @@ class Bike
   include DataMapper::Resource
 
   property :id,         Serial    # An auto-increment integer key
-  property :broken,     Boolean
-
-  def initialize
-    @broken = false
-  end
+  property :broken,     Boolean, default: false
 
   # def broken?
   #   @broken
