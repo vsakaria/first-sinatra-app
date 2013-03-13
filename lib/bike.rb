@@ -8,22 +8,23 @@ class Bike
     @broken = false
   end
 
-  def broken?
-    @broken
-  end
+  # def broken?
+  #   @broken
+  # end
 
   def break!
-    @broken = true  
+    broken = true  
     self
   end
 
   def fix!
-    @broken = false
+    broken = false
     self
   end
 
   def to_s
-    "The status of the bike is @broken"
+    "Id: #{id}, #{broken? ?  'This bike is unavailable as its broken':  'Available'}"
+
   end
 end
 

@@ -1,7 +1,12 @@
 <% @title = "Bike Page" %>
-<h1>This is where all our Bike related stuff will go</h1>
+	<h1><%= foundbikes.count %></h1>
 <h2>This is  the bike in the Db </h2>
-<%= h foundbike %>
+
+<ul>
+	<% foundbikes.each do |bike| %>
+		<li><%= escape_html bike.to_s %></li>
+	<% end %>
+</ul>
 
 
 

@@ -30,21 +30,19 @@ get '/' do
 end
 
 get '/bikes' do
-  #   foundbikes = [] 
+    
+  bikes = Bike.all
 
-  
-  #   bike = Bike.new
-  #   bike.save
-  #   foundbikes = Bike.get(1)
-  
-
-  # erb :bikes, locals: { foundbikes: foundbikes }
+  erb :bikes, locals: { foundbikes: bikes }
 end
 
 # Test at <appname>.heroku.com (you'll need to create your app first!)
 
 helpers do
-  def h(text)
+  def escape_html(text)
     Rack::Utils.escape_html(text)
   end
 end
+
+# bikes = Array.new(10) { Bike.new }
+# bikes.each{|bike| bike.save }
