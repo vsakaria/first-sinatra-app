@@ -7,15 +7,18 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 
 
+
 # Using datamapper for the ORM, with Postgres
 # see http://datamapper.org/getting-started.html
 require 'data_mapper'
-DataMapper.setup(:default, ENV['DATABASE_URL'] || postgres://localhost/boris_bikes.db')
-
-# set :database, ENV['DATABASE_URL'] || 'postgres://localhost/[YOUR_DATABASE_NAME]'
+require 'dm-migrations'
 
 # Our Application Files
 require './lib/bike'
+
+DataMapper.setup(:default, ENV['DATABASE_URL'] ||= 'postgres://localhost/borisbikes')
+#How do we run this only once?
+DataMapper.finalize.auto_upgrade!
 
 
 # for templates uncomment the line below
@@ -27,12 +30,15 @@ get '/' do
 end
 
 get '/bikes' do
-  # bikes = Array.new(10) { Bike.new }
-  bikes = []
-  10.times{ bikes << Bike.new }
-  puts bikes.inspect
+  #   foundbikes = [] 
 
-  erb :bikes, locals: { bikes: bikes }
+  
+  #   bike = Bike.new
+  #   bike.save
+  #   foundbikes = Bike.get(1)
+  
+
+  # erb :bikes, locals: { foundbikes: foundbikes }
 end
 
 # Test at <appname>.heroku.com (you'll need to create your app first!)

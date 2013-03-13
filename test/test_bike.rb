@@ -14,7 +14,7 @@ class TestBike < MiniTest::Unit::TestCase
   end
 
   def test_bike_can_be_broken
-    @bike.break!   
+    @bike.break!
     assert @bike.broken?
   end
 

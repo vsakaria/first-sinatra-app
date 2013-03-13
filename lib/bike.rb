@@ -1,4 +1,8 @@
 class Bike
+  include DataMapper::Resource
+
+  property :id,         Serial    # An auto-increment integer key
+  property :broken,     Boolean
 
   def initialize
     @broken = false
@@ -10,7 +14,7 @@ class Bike
 
   def break!
     @broken = true  
-    self  
+    self
   end
 
   def fix!
@@ -22,3 +26,9 @@ class Bike
     "The status of the bike is @broken"
   end
 end
+
+# <ul>
+# <% bike.each do |bike| %>
+#   <li><%= h bike.inspect %></li>
+# <% end %>
+# </ul> 
