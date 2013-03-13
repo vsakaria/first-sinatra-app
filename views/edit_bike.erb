@@ -1,0 +1,10 @@
+<h1>Edit Bike <%= @bike.id %></h1>
+<form method="post" action="/bikes/<%= @bike.id %>/update">
+	<label for="broken">Is it Broken?:</label>
+	<!-- This is a hack which allows you to put a http request rather than the defacto post -->
+	<input type="hidden" value="put" name="_method"/>
+	<input type="string" name="bike[broken]" value="<%= @bike.broken %>"/>
+
+	<input type="submit" value="Just Darn Well Update It!"/>	
+</form>
+

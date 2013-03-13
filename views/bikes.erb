@@ -6,6 +6,8 @@
 
 <ul>
 	<% foundbikes.each do |bike| %>
-		<li><%= escape_html bike.to_s %></li>
+		<li>
+			<a href='/bikes/<%= bike.id %>'>Bike No. <%= bike.id %></a>
+		</li>
 	<% end %>
 </ul>

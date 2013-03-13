@@ -52,6 +52,19 @@ get '/bikes/:id' do
   erb :show_bike
 end
 
+get '/bikes/:id/update' do
+  @bike = Bike.get(params[:id])
+
+  erb :edit_bike
+end
+
+put '/bikes/:id/update' do
+  bike = Bike.get(params[:id])
+  bike.update(params[:bike])
+  redirect to("/bikes/#{bike.id}")
+end 
+
+
 # Test at <appname>.heroku.com (you'll need to create your app first!)
 
 helpers do
