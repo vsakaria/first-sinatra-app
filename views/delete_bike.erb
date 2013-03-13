@@ -1,0 +1,7 @@
+
+<h1>Are you sure you want to delete</h1>
+
+<form method="post" action="/bikes/<%= @bike.id %>/delete">
+	<input type="hidden" value="delete" name="_method"/>
+	<input type="submit" value="Are you sure you want to delete?"/>
+</form>

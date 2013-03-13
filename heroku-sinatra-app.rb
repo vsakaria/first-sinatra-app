@@ -64,6 +64,18 @@ put '/bikes/:id/update' do
   redirect to("/bikes/#{bike.id}")
 end 
 
+get '/bikes/:id/delete' do
+  @bike = Bike.get(params[:id])
+
+  erb :delete_bike
+end
+
+delete '/bikes/:id/delete' do
+  bike = Bike.get(params[:id])
+  bike.destroy
+  redirect to("/bikes")
+end
+
 
 # Test at <appname>.heroku.com (you'll need to create your app first!)
 
